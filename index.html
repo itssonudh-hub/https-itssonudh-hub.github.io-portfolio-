@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonu Das — Digital Marketing Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f2ec;
+  --ink: #0f0e0c;
+  --accent: #c8f064;
+  --accent2: #0f0e0c;
+  --muted: #6b6860;
+  --card: #ffffff;
+  --border: #e0ddd6;
+  --green: #1a6b3c;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(245,242,236,0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 18px;
+  color: var(--ink); text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.nav-logo span { color: var(--green); }
+
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 13px; font-weight: 500;
+  color: var(--muted); text-decoration: none;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+
+.nav-cta {
+  background: var(--ink); color: var(--bg);
+  padding: 9px 20px; border-radius: 100px;
+  font-size: 13px; font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--green); }
+
+/* Mobile hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 60px; left: 0; right: 0;
+  background: rgba(245,242,236,0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 24px 24px;
+  z-index: 99;
+  flex-direction: column;
+  gap: 4px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 15px; font-weight: 500;
+  color: var(--ink); text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  display: block;
+}
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu .mob-cta {
+  margin-top: 12px;
+  background: var(--ink); color: var(--bg);
+  padding: 14px 24px; border-radius: 100px;
+  font-size: 14px; font-weight: 600;
+  text-align: center;
+  border-bottom: none !important;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 120px 48px 80px;
+  position: relative; overflow: hidden;
+}
+
+.hero-bg-text {
+  position: absolute;
+  top: 50%; left: -20px;
+  transform: translateY(-50%);
+  font-family: 'Syne', sans-serif;
+  font-size: 28vw; font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(15,14,12,0.06);
+  pointer-events: none; line-height: 1;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); color: var(--ink);
+  padding: 6px 16px; border-radius: 100px;
+  font-size: 12px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  margin-bottom: 28px; width: fit-content;
+  position: relative; z-index: 1;
+  opacity: 0; animation: fadeUp 0.7s 0.2s forwards;
+}
+
+.tag-dot {
+  width: 6px; height: 6px;
+  background: var(--green); border-radius: 50%;
+}
+
+.hero-name {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(48px, 9vw, 140px);
+  font-weight: 800; line-height: 0.9;
+  letter-spacing: -3px; color: var(--ink);
+  position: relative; z-index: 1;
+  margin-bottom: 32px;
+  opacity: 0; animation: fadeUp 0.7s 0.35s forwards;
+}
+
+.hero-name .line2 { color: var(--green); display: block; }
+
+.hero-bottom {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  position: relative; z-index: 1;
+  opacity: 0; animation: fadeUp 0.7s 0.5s forwards;
+  gap: 24px;
+}
+
+.hero-desc {
+  max-width: 480px;
+  font-size: 16px; color: var(--muted); line-height: 1.8;
+}
+
+.hero-right { text-align: right; flex-shrink: 0; }
+
+.hero-role {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px; font-weight: 600;
+  color: var(--ink); margin-bottom: 16px;
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+
+.hero-contact { font-size: 13px; color: var(--muted); line-height: 2; }
+.hero-contact a { color: var(--green); text-decoration: none; font-weight: 500; }
+
+/* Resume download button in hero */
+.hero-resume-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 16px;
+  background: var(--green); color: #fff;
+  padding: 10px 20px; border-radius: 100px;
+  font-size: 13px; font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  letter-spacing: 0.03em;
+}
+.hero-resume-btn:hover { background: #145530; transform: translateY(-2px); }
+.hero-resume-btn svg { width: 14px; height: 14px; fill: none; stroke: #fff; stroke-width: 2; }
+
+.hero-scroll {
+  position: absolute; bottom: 40px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  opacity: 0; animation: fadeUp 0.7s 1s forwards;
+}
+
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--muted));
+  animation: scrollPulse 2s infinite;
+}
+
+.scroll-label {
+  font-size: 10px; color: var(--muted);
+  letter-spacing: 0.15em; text-transform: uppercase;
+}
+
+@keyframes scrollPulse { 0%,100%{opacity:0.4;} 50%{opacity:1;} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(30px);} to{opacity:1;transform:translateY(0);} }
+
+/* ── SECTION BASE ── */
+.section {
+  padding: 100px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 56px;
+}
+
+.section-label {
+  font-size: 11px; color: var(--green);
+  letter-spacing: 0.2em; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 800; line-height: 1; color: var(--ink);
+  letter-spacing: -1.5px;
+}
+
+.section-title em { font-style: italic; color: var(--green); }
+
+.section-count {
+  font-family: 'Syne', sans-serif;
+  font-size: 64px; font-weight: 800;
+  color: var(--border); line-height: 1;
+}
+
+/* ── DIVIDER ── */
+.full-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 48px;
+}
+
+/* ── PROJECTS ── */
+.projects-wrap { display: flex; flex-direction: column; gap: 2px; }
+
+.proj-big {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 16px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.proj-big:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.08);
+}
+
+.proj-big.featured {
+  background: var(--ink);
+  color: #f5f2ec;
+}
+
+.proj-right { display: flex; flex-direction: column; justify-content: space-between; }
+
+.proj-number {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.2em; color: var(--green);
+  text-transform: uppercase; margin-bottom: 20px;
+}
+
+.proj-big.featured .proj-number { color: var(--accent); }
+
+.proj-client-name {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(22px, 3vw, 32px); font-weight: 800;
+  line-height: 1.1; letter-spacing: -1px;
+  color: var(--ink); margin-bottom: 6px;
+}
+
+.proj-big.featured .proj-client-name { color: #f5f2ec; }
+
+.proj-industry {
+  font-size: 13px; color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.proj-big.featured .proj-industry { color: rgba(245,242,236,0.5); }
+
+.proj-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+
+.proj-tag {
+  background: var(--bg); border: 1px solid var(--border);
+  color: var(--ink); font-size: 11px; font-weight: 500;
+  padding: 5px 12px; border-radius: 100px;
+  letter-spacing: 0.03em;
+}
+
+.proj-big.featured .proj-tag {
+  background: rgba(245,242,236,0.1);
+  border-color: rgba(245,242,236,0.2);
+  color: #f5f2ec;
+}
+
+.proj-challenge {
+  font-size: 14px; color: var(--muted); line-height: 1.8;
+}
+
+.proj-big.featured .proj-challenge { color: rgba(245,242,236,0.7); }
+.proj-challenge strong { color: var(--ink); font-weight: 600; }
+.proj-big.featured .proj-challenge strong { color: #f5f2ec; }
+
+.proj-results-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-bottom: 28px;
+}
+
+.result-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px 20px;
+}
+
+.proj-big.featured .result-box {
+  background: rgba(245,242,236,0.07);
+  border-color: rgba(245,242,236,0.12);
+}
+
+.result-num {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(24px, 3vw, 36px); font-weight: 800;
+  color: var(--green); line-height: 1; margin-bottom: 4px;
+}
+
+.proj-big.featured .result-num { color: var(--accent); }
+
+.result-label {
+  font-size: 11px; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+
+.proj-big.featured .result-label { color: rgba(245,242,236,0.5); }
+
+.proj-quote {
+  background: var(--bg);
+  border-left: 3px solid var(--green);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  font-size: 13px; color: var(--muted);
+  font-style: italic; line-height: 1.7;
+}
+
+.proj-big.featured .proj-quote {
+  background: rgba(245,242,236,0.07);
+  color: rgba(245,242,236,0.6);
+}
+
+/* Ongoing project card */
+.proj-ongoing {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px; padding: 36px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 16px;
+  border-left: 4px solid #f59e0b;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.proj-ongoing:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+}
+
+.ongoing-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #fef3c7; border: 1px solid #fde68a;
+  color: #92400e; font-size: 11px; font-weight: 600;
+  padding: 4px 12px; border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.ongoing-pulse {
+  width: 6px; height: 6px;
+  background: #f59e0b; border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.5;transform:scale(1.3);} }
+
+.ongoing-services {
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+.service-line {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--muted);
+}
+
+.service-dot {
+  width: 5px; height: 5px;
+  background: var(--green); border-radius: 50%; flex-shrink: 0;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+}
+
+.testimonial-card.featured-t {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.testi-quote-icon {
+  font-size: 32px;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 12px;
+  font-family: Georgia, serif;
+}
+
+.testi-text {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.testimonial-card.featured-t .testi-text {
+  color: rgba(245,242,236,0.7);
+}
+
+.testi-author {
+  display: flex; align-items: center; gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.testimonial-card.featured-t .testi-author {
+  border-top-color: rgba(245,242,236,0.15);
+}
+
+.testi-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 14px;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.testi-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px; font-weight: 700;
+  color: var(--ink); margin-bottom: 2px;
+}
+
+.testimonial-card.featured-t .testi-name { color: #f5f2ec; }
+
+.testi-biz {
+  font-size: 11px; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+
+.testimonial-card.featured-t .testi-biz { color: rgba(245,242,236,0.4); }
+
+/* ── ABOUT / EXPERIENCE SPLIT ── */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.about-text {
+  font-size: 17px; color: var(--ink); line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.about-text em { font-style: italic; color: var(--green); }
+
+.about-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.about-stat {
+  padding: 20px; background: var(--card);
+  border: 1px solid var(--border); border-radius: 12px;
+}
+
+.about-stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 36px; font-weight: 800;
+  color: var(--ink); line-height: 1; margin-bottom: 4px;
+}
+
+.about-stat-lbl {
+  font-size: 12px; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+
+/* Resume download in about */
+.resume-download-box {
+  margin-top: 24px;
+  background: var(--accent);
+  border-radius: 14px;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.resume-download-box .rdl {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 15px;
+  color: var(--ink);
+}
+
+.resume-download-box .rds {
+  font-size: 12px; color: rgba(15,14,12,0.6);
+  margin-top: 2px;
+}
+
+.resume-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--ink); color: #fff;
+  padding: 10px 20px; border-radius: 100px;
+  font-size: 13px; font-weight: 600;
+  text-decoration: none; white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+.resume-btn:hover { background: var(--green); transform: translateY(-2px); }
+.resume-btn svg { width: 14px; height: 14px; fill: none; stroke: #fff; stroke-width: 2; }
+
+/* ── TIMELINE ── */
+.timeline { display: flex; flex-direction: column; gap: 0; }
+
+.tl-item {
+  padding: 24px 0 24px 28px;
+  border-left: 1.5px solid var(--border);
+  position: relative;
+}
+
+.tl-item::before {
+  content: '';
+  position: absolute; left: -5px; top: 30px;
+  width: 9px; height: 9px;
+  background: var(--border); border-radius: 50%;
+}
+
+.tl-item.active::before { background: var(--green); }
+.tl-item.active { border-left-color: var(--green); }
+
+.tl-period {
+  font-size: 11px; color: var(--muted);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.tl-role {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px; font-weight: 700;
+  color: var(--ink); margin-bottom: 2px;
+}
+
+.tl-company {
+  font-size: 13px; color: var(--green);
+  font-style: italic; margin-bottom: 10px;
+}
+
+.tl-desc {
+  font-size: 13px; color: var(--muted); line-height: 1.7;
+}
+
+/* ── SKILLS SECTION ── */
+.skills-layout {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.skill-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 28px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+}
+
+.skill-card-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px; font-weight: 700;
+  color: var(--ink); text-transform: uppercase;
+  letter-spacing: 0.05em; margin-bottom: 16px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--border);
+}
+
+.skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+
+.skill-tag {
+  background: var(--bg); border: 1px solid var(--border);
+  color: var(--ink); font-size: 12px;
+  padding: 5px 11px; border-radius: 100px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.skill-tag:hover { background: var(--accent); border-color: var(--accent); }
+
+/* ── CERTS ── */
+.certs-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px; margin-top: 20px;
+}
+
+.cert-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 24px;
+  border-top: 3px solid var(--green);
+  transition: transform 0.2s;
+  text-decoration: none;
+  display: block;
+}
+
+.cert-card:hover { transform: translateY(-3px); }
+
+.cert-emoji { font-size: 24px; margin-bottom: 12px; }
+.cert-name { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.cert-iss { font-size: 12px; color: var(--green); font-weight: 500; }
+.cert-verify { font-size: 11px; color: var(--muted); margin-top: 8px; text-decoration: underline; }
+
+/* ── CONTACT ── */
+.contact-big {
+  background: var(--ink); border-radius: 24px;
+  padding: 80px 64px;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 40px;
+}
+
+.contact-heading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 800; color: var(--bg);
+  line-height: 1.1; letter-spacing: -1.5px;
+  margin-bottom: 16px;
+}
+
+.contact-heading span { color: var(--accent); }
+
+.contact-sub {
+  font-size: 15px; color: rgba(245,242,236,0.5);
+  max-width: 360px; line-height: 1.7;
+}
+
+.contact-links {
+  display: flex; flex-direction: column; gap: 14px;
+  flex-shrink: 0;
+}
+
+.contact-link {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.contact-link:hover { transform: translateX(4px); }
+
+.c-icon {
+  width: 40px; height: 40px;
+  background: rgba(245,242,236,0.08);
+  border: 1px solid rgba(245,242,236,0.12);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 10px; color: var(--accent);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.c-text { font-size: 14px; color: rgba(245,242,236,0.8); }
+
+/* ── FOOTER ── */
+footer {
+  padding: 24px 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid var(--border);
+  font-size: 12px; color: var(--muted);
+  flex-wrap: wrap; gap: 8px;
+}
+
+.footer-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 15px; color: var(--ink);
+}
+
+.footer-logo span { color: var(--green); }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s, transform 0.7s; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ─────────────────────────────────────────
+   MOBILE RESPONSIVE — Complete overhaul
+───────────────────────────────────────── */
+@media (max-width: 900px) {
+  .skills-layout { grid-template-columns: 1fr 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr 1fr; }
+  .certs-row { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  /* Nav */
+  nav { padding: 14px 20px; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
+
+  /* Hero */
+  .hero { padding: 100px 20px 80px; min-height: 100svh; }
+  .hero-name { font-size: clamp(52px, 15vw, 80px); letter-spacing: -2px; }
+  .hero-bg-text { font-size: 40vw; }
+  .hero-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .hero-right { text-align: left; }
+  .hero-desc { font-size: 15px; max-width: 100%; }
+  .hero-contact { line-height: 2.2; }
+  .hero-scroll { display: none; }
+
+  /* Sections */
+  .section { padding: 64px 20px; }
+  .section-header { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 36px; }
+  .section-count { font-size: 40px; }
+  .full-divider { margin: 0 20px; }
+
+  /* Projects */
+  .proj-big { grid-template-columns: 1fr; gap: 28px; padding: 28px 24px; }
+  .proj-right { justify-content: flex-start; }
+  .proj-ongoing { grid-template-columns: 1fr; gap: 24px; padding: 24px 20px; }
+  .proj-client-name { font-size: 24px; }
+  .proj-results-grid { grid-template-columns: 1fr 1fr; }
+  .result-num { font-size: 28px; }
+
+  /* Testimonials */
+  .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-text { font-size: 16px; }
+  .about-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .about-stat-num { font-size: 28px; }
+  .resume-download-box { flex-direction: column; align-items: flex-start; gap: 12px; }
+
+  /* Skills */
+  .skills-layout { grid-template-columns: 1fr; gap: 16px; }
+  .certs-row { grid-template-columns: 1fr; gap: 12px; }
+
+  /* Contact */
+  .contact-big { flex-direction: column; align-items: flex-start; padding: 36px 24px; border-radius: 16px; gap: 32px; }
+  .contact-links { width: 100%; }
+  .contact-link { padding: 10px 0; border-bottom: 1px solid rgba(245,242,236,0.08); }
+
+  /* Footer */
+  footer { padding: 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+}
+
+@media (max-width: 400px) {
+  .hero-name { font-size: clamp(44px, 16vw, 64px); }
+  .proj-results-grid { grid-template-columns: 1fr; }
+  .about-stats { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">Sonu <span>Das</span></a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Let's Talk</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#work" onclick="closeMobileMenu()">Work</a>
+  <a href="#testimonials" onclick="closeMobileMenu()">Reviews</a>
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+  <a href="#contact" onclick="closeMobileMenu()" class="mob-cta">Let's Talk →</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-text">SD</div>
+
+  <div class="hero-tag">
+    <span class="tag-dot"></span>
+    Available for opportunities
+  </div>
+
+  <h1 class="hero-name">
+    Sonu<br>
+    <span class="line2">Das.</span>
+  </h1>
+
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      Digital Marketer and Agency Founder with 2+ years of experience in social media, SEO, WordPress development, Google Ads, and Meta Ads. I build brands online and make sure the work actually shows in numbers.
+    </p>
+    <div class="hero-right">
+      <div class="hero-role">Digital Marketing Professional</div>
+      <div class="hero-contact">
+        <a href="tel:+917870148032">+91 78701 48032</a><br>
+        <a href="mailto:sonudas@digitalimax.com">sonudas@digitalimax.com</a><br>
+        <a href="https://linkedin.com/in/sonu-das" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
+        <a href="https://digitalimax.com" target="_blank">digitalimax.com</a><br>
+        Hyderabad, India
+      </div>
+      <a href="#" class="hero-resume-btn">
+        <svg viewBox="0 0 24 24"><path d="M12 15l-4-4h2.5V4h3v7H16l-4 4z"/><path d="M4 18h16v2H4v-2z"/></svg>
+        Download Resume
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-label">Scroll</span>
+  </div>
+</div>
+
+<div class="full-divider"></div>
+
+<!-- WORK / PROJECTS -->
+<section class="section" id="work">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Selected Work</div>
+      <h2 class="section-title">Projects &<br><em>Results</em></h2>
+    </div>
+    <div class="section-count">04</div>
+  </div>
+
+  <div class="projects-wrap">
+
+    <!-- PROJECT 1 — Featured -->
+    <div class="proj-big featured reveal">
+      <div class="proj-left">
+        <div class="proj-number">Project 01 · Social Media Marketing</div>
+        <div class="proj-client-name">Das Fastfood</div>
+        <div class="proj-industry">Food & Beverage · Hyderabad</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Social Media</span>
+          <span class="proj-tag">Content Strategy</span>
+          <span class="proj-tag">Local Audience</span>
+          <span class="proj-tag">Instagram</span>
+          <span class="proj-tag">Facebook</span>
+        </div>
+        <p class="proj-challenge">
+          <strong>Challenge:</strong> The brand had no real online presence — posting was irregular, engagement was near zero, and local customers had no digital touchpoint. Good product, no visibility.
+          <br><br>
+          Built their entire social media presence from scratch. Developed a consistent content calendar, created local audience-targeted posts, and focused on building genuine community engagement.
+        </p>
+      </div>
+      <div class="proj-right">
+        <div class="proj-results-grid">
+          <div class="result-box">
+            <div class="result-num">2x</div>
+            <div class="result-label">Engagement Growth</div>
+          </div>
+          <div class="result-box">
+            <div class="result-num">+110%</div>
+            <div class="result-label">Reach Increase</div>
+          </div>
+        </div>
+        <div class="proj-quote">
+          "Their content and consistent posting helped increase our engagement and brand visibility significantly."
+          <br><br>— Das Fastfood, Hyderabad
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="proj-big reveal">
+      <div class="proj-left">
+        <div class="proj-number">Project 02 · Video Editing & Branding</div>
+        <div class="proj-client-name">King Brother's Photography</div>
+        <div class="proj-industry">Photography & Videography · Kolkata</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Video Editing</span>
+          <span class="proj-tag">Brand Identity</span>
+          <span class="proj-tag">Content Creation</span>
+          <span class="proj-tag">Instagram Reels</span>
+          <span class="proj-tag">CapCut / Premiere Pro</span>
+        </div>
+        <p class="proj-challenge">
+          <strong>Challenge:</strong> They had exceptional work but raw footage wasn't translating their quality online. Poor presentation meant potential clients couldn't see the real value of their services.
+          <br><br>
+          Transformed their raw footage into polished, branded content that matched their studio's visual style. Established a consistent content identity across all platforms.
+        </p>
+      </div>
+      <div class="proj-right">
+        <div class="proj-results-grid">
+          <div class="result-box">
+            <div class="result-num">+212%</div>
+            <div class="result-label">Profile Reach</div>
+          </div>
+          <div class="result-box">
+            <div class="result-num">+240%</div>
+            <div class="result-label">Profile Views</div>
+          </div>
+        </div>
+        <div class="proj-quote">
+          "The edits were clean, creative, and matched our visual style perfectly. The videos looked truly professional."
+          <br><br>— King Brother's Photography
+        </div>
+      </div>
+    </div>
+
+    <!-- ONGOING PROJECTS -->
+    <div class="proj-ongoing reveal">
+      <div>
+        <div class="ongoing-badge">
+          <span class="ongoing-pulse"></span>
+          Currently Active
+        </div>
+        <div class="proj-number" style="color:#92400e;">Project 03 · Full Digital Marketing</div>
+        <div class="proj-client-name">Krishna Sarthi</div>
+        <div class="proj-industry">Public Service · Ranchi, Jharkhand</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Google Ads</span>
+          <span class="proj-tag">Meta Ads</span>
+          <span class="proj-tag">SEO</span>
+          <span class="proj-tag">Website Design</span>
+          <span class="proj-tag">Social Media</span>
+        </div>
+      </div>
+      <div>
+        <p class="proj-challenge" style="color: var(--muted); font-size:14px; line-height:1.8; margin-bottom: 20px;">
+          <strong>Scope:</strong> End-to-end digital marketing setup for a public service brand. Running Google Ads, Meta Ads (Facebook & Instagram), SEO, website design and development, and social media management simultaneously. Recently started — results being actively tracked.
+        </p>
+        <div class="ongoing-services">
+          <div class="service-line"><span class="service-dot"></span>Google Ads & Meta Ads — campaign setup & management</div>
+          <div class="service-line"><span class="service-dot"></span>Website design & WordPress development</div>
+          <div class="service-line"><span class="service-dot"></span>On-page SEO & keyword strategy</div>
+          <div class="service-line"><span class="service-dot"></span>Social media content & management</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-ongoing reveal">
+      <div>
+        <div class="ongoing-badge">
+          <span class="ongoing-pulse"></span>
+          Currently Active
+        </div>
+        <div class="proj-number" style="color:#92400e;">Project 04 · Full Digital Marketing</div>
+        <div class="proj-client-name">Vedha Waterproofing</div>
+        <div class="proj-industry">Contractor & Construction · Hyderabad</div>
+        <div class="proj-tags">
+          <span class="proj-tag">WordPress</span>
+          <span class="proj-tag">Google Ads</span>
+          <span class="proj-tag">Social Media</span>
+          <span class="proj-tag">SEO</span>
+          <span class="proj-tag">Lead Generation</span>
+        </div>
+      </div>
+      <div>
+        <p class="proj-challenge" style="color: var(--muted); font-size:14px; line-height:1.8; margin-bottom: 20px;">
+          <strong>Scope:</strong> Full-service digital engagement — WordPress website development, social media management, SEO, and Google Ads focused on local lead generation for a construction services brand. Just started, results being tracked.
+        </p>
+        <div class="ongoing-services">
+          <div class="service-line"><span class="service-dot"></span>WordPress website design & development</div>
+          <div class="service-line"><span class="service-dot"></span>Google Ads for local service leads</div>
+          <div class="service-line"><span class="service-dot"></span>On-page SEO & Google Business Profile</div>
+          <div class="service-line"><span class="service-dot"></span>Social media content & posting</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Client Words</div>
+      <h2 class="section-title">What Clients<br><em>Say</em></h2>
+    </div>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card featured-t reveal">
+      <div class="testi-quote-icon">"</div>
+      <p class="testi-text">Their content and consistent posting helped increase our engagement and brand visibility significantly. We started getting more walk-in customers who found us on Instagram.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">DF</div>
+        <div>
+          <div class="testi-name">Das Fastfood</div>
+          <div class="testi-biz">Food & Beverage · Hyderabad</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card reveal">
+      <div class="testi-quote-icon">"</div>
+      <p class="testi-text">The edits were clean, creative, and matched our visual style perfectly. The videos looked truly professional. Our Instagram started looking like a premium studio portfolio.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">KB</div>
+        <div>
+          <div class="testi-name">King Brother's Photography</div>
+          <div class="testi-biz">Photography & Videography · Kolkata</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card reveal">
+      <div class="testi-quote-icon">"</div>
+      <p class="testi-text">Sonu handles everything end-to-end — from the website to ads. We don't need to worry about digital. He understands the business quickly and gets to work.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">VS</div>
+        <div>
+          <div class="testi-name">Vedha Waterproofing</div>
+          <div class="testi-biz">Construction Services · Hyderabad</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- ABOUT + EXPERIENCE -->
+<section class="section" id="about">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Background</div>
+      <h2 class="section-title">About &<br><em>Experience</em></h2>
+    </div>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-left reveal">
+      <p class="about-text">
+        I am a Digital Marketing professional based in Hyderabad with <em>2+ years of hands-on experience</em>. I run my own agency, Digital IMAX, where I have worked with 6+ businesses across four cities — while also managing institutional digital communication at ASCI.
+        <br><br>
+        I work across the full digital stack — social media, SEO, WordPress, Google Ads, Meta Ads, content, and branding. I focus on work that actually moves numbers, not just looks busy.
+      </p>
+      <div class="about-stats">
+        <div class="about-stat">
+          <div class="about-stat-num">2+</div>
+          <div class="about-stat-lbl">Years Experience</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">6+</div>
+          <div class="about-stat-lbl">Clients Served</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">4</div>
+          <div class="about-stat-lbl">Cities — HYD, DEL, KOL, RNC</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">+212%</div>
+          <div class="about-stat-lbl">Best Reach Result</div>
+        </div>
+      </div>
+
+      <!-- Resume Download Box -->
+      <div class="resume-download-box">
+        <div>
+          <div class="rdl">Download My Resume</div>
+          <div class="rds">PDF · Digital Marketing Professional</div>
+        </div>
+        <a href="#" class="resume-btn">
+          <svg viewBox="0 0 24 24"><path d="M12 15l-4-4h2.5V4h3v7H16l-4 4z"/><path d="M4 18h16v2H4v-2z"/></svg>
+          Resume PDF
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="timeline">
+
+        <div class="tl-item active">
+          <div class="tl-period">June 2025 — Present</div>
+          <div class="tl-role">Social Media Marketing Executive</div>
+          <div class="tl-company">ASCI – Administrative Staff College of India</div>
+          <div class="tl-desc">Managing institutional digital presence across LinkedIn, Facebook, Instagram & X for executive programs attended by IAS officers, IIT faculty, banking leaders, and policymakers.</div>
+        </div>
+
+        <div class="tl-item active">
+          <div class="tl-period">Dec 2024 — Present</div>
+          <div class="tl-role">Founder</div>
+          <div class="tl-company">Digital IMAX — Digital Marketing Agency, Hyderabad</div>
+          <div class="tl-desc">Founded and operate a full-service digital marketing agency. Managing 6+ clients across Hyderabad, Delhi, Kolkata & Ranchi — handling SEO, social media, WordPress development, Google Ads, Meta Ads, video editing, and branding.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-period">Dec 2024 — April 2025</div>
+          <div class="tl-role">Digital Marketing Executive</div>
+          <div class="tl-company">Rysun Jewels · Kris Diamonds · GGJA Education</div>
+          <div class="tl-desc">Managed digital marketing for B2B, B2C and education brands simultaneously — content strategy, SEO, GA4 monitoring, Google Business Profile, and Odoo CMS management.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-period">Aug 2024 — Dec 2024</div>
+          <div class="tl-role">Digital Marketing Executive</div>
+          <div class="tl-company">COEPD</div>
+          <div class="tl-desc">On-page SEO, keyword research, content optimization, and campaign assistance.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Capabilities</div>
+      <h2 class="section-title">Skills &<br><em>Tools</em></h2>
+    </div>
+  </div>
+
+  <div class="skills-layout">
+    <div class="skill-card reveal">
+      <div class="skill-card-title">Marketing</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Social Media Management</span>
+        <span class="skill-tag">Content Strategy</span>
+        <span class="skill-tag">Editorial Calendar</span>
+        <span class="skill-tag">Brand Positioning</span>
+        <span class="skill-tag">B2B Marketing</span>
+        <span class="skill-tag">B2C Marketing</span>
+        <span class="skill-tag">Performance Marketing</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-title">Advertising & SEO</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Google Ads</span>
+        <span class="skill-tag">Meta Ads</span>
+        <span class="skill-tag">On-Page SEO</span>
+        <span class="skill-tag">Off-Page SEO</span>
+        <span class="skill-tag">Link Building</span>
+        <span class="skill-tag">Keyword Research</span>
+        <span class="skill-tag">Local SEO</span>
+        <span class="skill-tag">Google Business Profile</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-title">Web & Analytics</div>
+      <div class="skill-tags">
+        <span class="skill-tag">WordPress Development</span>
+        <span class="skill-tag">Elementor</span>
+        <span class="skill-tag">Odoo CMS</span>
+        <span class="skill-tag">Google Analytics 4</span>
+        <span class="skill-tag">Google Search Console</span>
+        <span class="skill-tag">Rank Math / Yoast</span>
+        <span class="skill-tag">Basic HTML</span>
+      </div>
+    </div>
+    <div class="skill-card reveal" style="grid-column: span 1;">
+      <div class="skill-card-title">Creative & Design</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Video Editing</span>
+        <span class="skill-tag">CapCut</span>
+        <span class="skill-tag">Premiere Pro</span>
+        <span class="skill-tag">Canva</span>
+        <span class="skill-tag">Instagram Reels</span>
+        <span class="skill-tag">Brand Identity</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="certs-row" style="margin-top:24px;">
+    <a href="#" target="_blank" class="cert-card reveal">
+      <div class="cert-emoji">📱</div>
+      <div class="cert-name">Digital Marketing Certification</div>
+      <div class="cert-iss">Digital Medha & Advertising</div>
+      <div class="cert-verify">View Certificate →</div>
+    </a>
+    <a href="https://skillshop.credential.net" target="_blank" class="cert-card reveal">
+      <div class="cert-emoji">📊</div>
+      <div class="cert-name">Google Analytics Certification</div>
+      <div class="cert-iss">Google</div>
+      <div class="cert-verify">Verify on Google →</div>
+    </a>
+    <a href="https://www.semrush.com/academy/certificates/" target="_blank" class="cert-card reveal">
+      <div class="cert-emoji">🔍</div>
+      <div class="cert-name">SEO Certification</div>
+      <div class="cert-iss">Semrush</div>
+      <div class="cert-verify">Verify on Semrush →</div>
+    </a>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="contact-big reveal">
+    <div class="contact-left">
+      <h2 class="contact-heading">
+        Let's work<br>
+        <span>together.</span>
+      </h2>
+      <p class="contact-sub">
+        Looking for a digital marketer who can handle everything from strategy to execution? Let's talk.
+      </p>
+    </div>
+    <div class="contact-links">
+      <a href="tel:+917870148032" class="contact-link">
+        <div class="c-icon">TEL</div>
+        <div class="c-text">+91 78701 48032</div>
+      </a>
+      <a href="mailto:sonudas@digitalimax.com" class="contact-link">
+        <div class="c-icon">MAIL</div>
+        <div class="c-text">sonudas@digitalimax.com</div>
+      </a>
+      <a href="https://linkedin.com/in/sonu-das" target="_blank" class="contact-link">
+        <div class="c-icon">LIN</div>
+        <div class="c-text">linkedin.com/in/sonu-das</div>
+      </a>
+      <a href="https://digitalimax.com" target="_blank" class="contact-link">
+        <div class="c-icon">WEB</div>
+        <div class="c-text">digitalimax.com</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Sonu <span>Das</span></div>
+  <div>Digital Marketing Professional · Hyderabad, India · 2+ Years Experience</div>
+  <div>© 2026 · digitalimax.com</div>
+</footer>
+
+<script>
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+
+function closeMobileMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+}
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+reveals.forEach(el => observer.observe(el));
+
+// Close menu on outside click
+document.addEventListener('click', (e) => {
+  if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+    closeMobileMenu();
+  }
+});
+</script>
+
+</body>
+</html>
