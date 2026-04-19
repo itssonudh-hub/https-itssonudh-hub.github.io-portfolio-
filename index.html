@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +44,6 @@ nav {
   color: var(--ink); text-decoration: none;
   letter-spacing: -0.5px;
 }
-
 .nav-logo span { color: var(--green); }
 
 .nav-links { display: flex; gap: 32px; list-style: none; }
@@ -67,19 +65,13 @@ nav {
 .nav-cta:hover { background: var(--green); }
 
 .hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 4px;
-  background: none;
-  border: none;
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 4px;
+  background: none; border: none;
 }
 .hamburger span {
-  display: block;
-  width: 22px; height: 2px;
-  background: var(--ink);
-  border-radius: 2px;
+  display: block; width: 22px; height: 2px;
+  background: var(--ink); border-radius: 2px;
   transition: all 0.3s;
 }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -88,32 +80,24 @@ nav {
 
 .mobile-menu {
   display: none;
-  position: fixed;
-  top: 60px; left: 0; right: 0;
+  position: fixed; top: 60px; left: 0; right: 0;
   background: rgba(245,242,236,0.98);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  padding: 20px 24px 24px;
-  z-index: 99;
-  flex-direction: column;
-  gap: 4px;
+  padding: 20px 24px 24px; z-index: 99;
+  flex-direction: column; gap: 4px;
 }
 .mobile-menu.open { display: flex; }
 .mobile-menu a {
   font-size: 15px; font-weight: 500;
   color: var(--ink); text-decoration: none;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-  display: block;
+  padding: 12px 0; border-bottom: 1px solid var(--border); display: block;
 }
 .mobile-menu a:last-child { border-bottom: none; }
 .mobile-menu .mob-cta {
-  margin-top: 12px;
-  background: var(--ink); color: var(--bg);
+  margin-top: 12px; background: var(--ink); color: var(--bg);
   padding: 14px 24px; border-radius: 100px;
-  font-size: 14px; font-weight: 600;
-  text-align: center;
-  border-bottom: none !important;
+  font-size: 14px; font-weight: 600; text-align: center; border-bottom: none !important;
 }
 
 .hero {
@@ -124,16 +108,13 @@ nav {
 }
 
 .hero-bg-text {
-  position: absolute;
-  top: 50%; left: -20px;
+  position: absolute; top: 50%; left: -20px;
   transform: translateY(-50%);
   font-family: 'Syne', sans-serif;
   font-size: 28vw; font-weight: 800;
   color: transparent;
   -webkit-text-stroke: 1px rgba(15,14,12,0.06);
-  pointer-events: none; line-height: 1;
-  white-space: nowrap;
-  z-index: 0;
+  pointer-events: none; line-height: 1; white-space: nowrap; z-index: 0;
 }
 
 .hero-tag {
@@ -146,41 +127,30 @@ nav {
   position: relative; z-index: 1;
   opacity: 0; animation: fadeUp 0.7s 0.2s forwards;
 }
-
-.tag-dot {
-  width: 6px; height: 6px;
-  background: var(--green); border-radius: 50%;
-}
+.tag-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; }
 
 .hero-name {
   font-family: 'Syne', sans-serif;
   font-size: clamp(48px, 9vw, 140px);
   font-weight: 800; line-height: 0.9;
   letter-spacing: -3px; color: var(--ink);
-  position: relative; z-index: 1;
-  margin-bottom: 32px;
+  position: relative; z-index: 1; margin-bottom: 32px;
   opacity: 0; animation: fadeUp 0.7s 0.35s forwards;
 }
-
 .hero-name .line2 { color: var(--green); display: block; }
 
 .hero-bottom {
   display: flex; justify-content: space-between; align-items: flex-end;
   position: relative; z-index: 1;
-  opacity: 0; animation: fadeUp 0.7s 0.5s forwards;
-  gap: 24px;
+  opacity: 0; animation: fadeUp 0.7s 0.5s forwards; gap: 24px;
 }
 
-.hero-desc {
-  max-width: 480px;
-  font-size: 16px; color: var(--muted); line-height: 1.8;
-}
+.hero-desc { max-width: 480px; font-size: 16px; color: var(--muted); line-height: 1.8; }
 
 .hero-right { text-align: right; flex-shrink: 0; }
 
 .hero-role {
-  font-family: 'Syne', sans-serif;
-  font-size: 15px; font-weight: 600;
+  font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 600;
   color: var(--ink); margin-bottom: 16px;
   text-transform: uppercase; letter-spacing: 0.05em;
 }
@@ -190,578 +160,308 @@ nav {
 
 .hero-resume-btn {
   display: inline-flex; align-items: center; gap: 8px;
-  margin-top: 16px;
-  background: var(--green); color: #fff;
+  margin-top: 16px; background: var(--green); color: #fff;
   padding: 10px 20px; border-radius: 100px;
-  font-size: 13px; font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s, transform 0.2s;
-  letter-spacing: 0.03em;
+  font-size: 13px; font-weight: 600; text-decoration: none;
+  transition: background 0.2s, transform 0.2s; letter-spacing: 0.03em;
 }
 .hero-resume-btn:hover { background: #145530; transform: translateY(-2px); }
 .hero-resume-btn svg { width: 14px; height: 14px; fill: none; stroke: #fff; stroke-width: 2; }
 
 .hero-scroll {
-  position: absolute; bottom: 40px; left: 50%;
-  transform: translateX(-50%);
+  position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 8px;
   opacity: 0; animation: fadeUp 0.7s 1s forwards;
 }
-
 .scroll-line {
   width: 1px; height: 40px;
   background: linear-gradient(to bottom, transparent, var(--muted));
   animation: scrollPulse 2s infinite;
 }
-
-.scroll-label {
-  font-size: 10px; color: var(--muted);
-  letter-spacing: 0.15em; text-transform: uppercase;
-}
+.scroll-label { font-size: 10px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; }
 
 @keyframes scrollPulse { 0%,100%{opacity:0.4;} 50%{opacity:1;} }
 @keyframes fadeUp { from{opacity:0;transform:translateY(30px);} to{opacity:1;transform:translateY(0);} }
 
-.section {
-  padding: 100px 48px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+.section { padding: 100px 48px; max-width: 1200px; margin: 0 auto; }
 
 .section-header {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  margin-bottom: 56px;
+  display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px;
 }
-
-.section-label {
-  font-size: 11px; color: var(--green);
-  letter-spacing: 0.2em; text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
+.section-label { font-size: 11px; color: var(--green); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; }
 .section-title {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(32px, 4vw, 56px);
-  font-weight: 800; line-height: 1; color: var(--ink);
-  letter-spacing: -1.5px;
+  font-size: clamp(32px, 4vw, 56px); font-weight: 800;
+  line-height: 1; color: var(--ink); letter-spacing: -1.5px;
 }
-
 .section-title em { font-style: italic; color: var(--green); }
+.section-count { font-family: 'Syne', sans-serif; font-size: 64px; font-weight: 800; color: var(--border); line-height: 1; }
 
-.section-count {
-  font-family: 'Syne', sans-serif;
-  font-size: 64px; font-weight: 800;
-  color: var(--border); line-height: 1;
-}
-
-.full-divider {
-  height: 1px;
-  background: var(--border);
-  margin: 0 48px;
-}
+.full-divider { height: 1px; background: var(--border); margin: 0 48px; }
 
 .projects-wrap { display: flex; flex-direction: column; gap: 2px; }
 
 .proj-big {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 48px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 16px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+  padding: 48px; display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; margin-bottom: 16px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-
-.proj-big:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.08);
-}
-
-.proj-big.featured {
-  background: var(--ink);
-  color: #f5f2ec;
-}
-
+.proj-big:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0,0,0,0.08); }
+.proj-big.featured { background: var(--ink); color: #f5f2ec; }
 .proj-right { display: flex; flex-direction: column; justify-content: space-between; }
 
 .proj-number {
-  font-family: 'Syne', sans-serif;
-  font-size: 12px; font-weight: 700;
-  letter-spacing: 0.2em; color: var(--green);
-  text-transform: uppercase; margin-bottom: 20px;
+  font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.2em; color: var(--green); text-transform: uppercase; margin-bottom: 20px;
 }
-
 .proj-big.featured .proj-number { color: var(--accent); }
 
 .proj-client-name {
   font-family: 'Syne', sans-serif;
   font-size: clamp(22px, 3vw, 32px); font-weight: 800;
-  line-height: 1.1; letter-spacing: -1px;
-  color: var(--ink); margin-bottom: 6px;
+  line-height: 1.1; letter-spacing: -1px; color: var(--ink); margin-bottom: 6px;
 }
-
 .proj-big.featured .proj-client-name { color: #f5f2ec; }
 
-.proj-industry {
-  font-size: 13px; color: var(--muted);
-  margin-bottom: 12px;
-}
-
-.proj-role-tag {
-  display: inline-block;
-  font-size: 11px; font-weight: 600;
-  color: var(--green);
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
-  padding: 5px 12px; border-radius: 100px;
-  margin-bottom: 18px;
-  letter-spacing: 0.02em;
-}
-
+.proj-industry { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
 .proj-big.featured .proj-industry { color: rgba(245,242,236,0.5); }
 
-.proj-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.proj-role-tag {
+  display: inline-block; font-size: 11px; font-weight: 600; color: var(--green);
+  background: #f0fdf4; border: 1px solid #bbf7d0;
+  padding: 5px 12px; border-radius: 100px; margin-bottom: 18px; letter-spacing: 0.02em;
+}
 
+.proj-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
 .proj-tag {
   background: var(--bg); border: 1px solid var(--border);
   color: var(--ink); font-size: 11px; font-weight: 500;
-  padding: 5px 12px; border-radius: 100px;
-  letter-spacing: 0.03em;
+  padding: 5px 12px; border-radius: 100px; letter-spacing: 0.03em;
 }
-
 .proj-big.featured .proj-tag {
-  background: rgba(245,242,236,0.1);
-  border-color: rgba(245,242,236,0.2);
-  color: #f5f2ec;
+  background: rgba(245,242,236,0.1); border-color: rgba(245,242,236,0.2); color: #f5f2ec;
 }
 
-.proj-challenge {
-  font-size: 14px; color: var(--muted); line-height: 1.8;
-}
-
+.proj-challenge { font-size: 14px; color: var(--muted); line-height: 1.8; }
 .proj-big.featured .proj-challenge { color: rgba(245,242,236,0.7); }
 .proj-challenge strong { color: var(--ink); font-weight: 600; }
 .proj-big.featured .proj-challenge strong { color: #f5f2ec; }
 
-.proj-results-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 16px; margin-bottom: 28px;
+/* Impact list — replaces fake result boxes */
+.impact-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.impact-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  background: rgba(245,242,236,0.07); border: 1px solid rgba(245,242,236,0.12);
+  border-radius: 10px; padding: 12px 16px;
 }
-
-.result-box {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 12px; padding: 16px 20px;
+.proj-big:not(.featured) .impact-item {
+  background: var(--bg); border-color: var(--border);
 }
-
-.proj-big.featured .result-box {
-  background: rgba(245,242,236,0.07);
-  border-color: rgba(245,242,236,0.12);
+.impact-dot {
+  width: 6px; height: 6px; background: var(--accent);
+  border-radius: 50%; flex-shrink: 0; margin-top: 6px;
 }
-
-.result-num {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(24px, 3vw, 36px); font-weight: 800;
-  color: var(--green); line-height: 1; margin-bottom: 4px;
-}
-
-.proj-big.featured .result-num { color: var(--accent); }
-
-.result-label {
-  font-size: 11px; color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.08em;
-}
-
-.proj-big.featured .result-label { color: rgba(245,242,236,0.5); }
+.proj-big:not(.featured) .impact-dot { background: var(--green); }
+.impact-text { font-size: 13px; color: rgba(245,242,236,0.8); line-height: 1.6; }
+.proj-big:not(.featured) .impact-text { color: var(--muted); }
 
 .proj-quote {
-  background: var(--bg);
-  border-left: 3px solid var(--green);
-  padding: 16px 20px;
-  border-radius: 0 8px 8px 0;
-  font-size: 13px; color: var(--muted);
-  font-style: italic; line-height: 1.7;
+  background: var(--bg); border-left: 3px solid var(--green);
+  padding: 16px 20px; border-radius: 0 8px 8px 0;
+  font-size: 13px; color: var(--muted); font-style: italic; line-height: 1.7;
 }
-
 .proj-big.featured .proj-quote {
-  background: rgba(245,242,236,0.07);
-  color: rgba(245,242,236,0.6);
+  background: rgba(245,242,236,0.07); color: rgba(245,242,236,0.6);
 }
 
 .proj-ongoing {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 20px; padding: 36px 48px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 16px;
-  border-left: 4px solid #f59e0b;
+  background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+  padding: 36px 48px; display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; margin-bottom: 16px; border-left: 4px solid #f59e0b;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-
-.proj-ongoing:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.06);
-}
+.proj-ongoing:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.06); }
 
 .ongoing-badge {
   display: inline-flex; align-items: center; gap: 6px;
   background: #fef3c7; border: 1px solid #fde68a;
   color: #92400e; font-size: 11px; font-weight: 600;
-  padding: 4px 12px; border-radius: 100px;
-  margin-bottom: 16px;
+  padding: 4px 12px; border-radius: 100px; margin-bottom: 16px;
 }
-
 .ongoing-pulse {
-  width: 6px; height: 6px;
-  background: #f59e0b; border-radius: 50%;
+  width: 6px; height: 6px; background: #f59e0b; border-radius: 50%;
   animation: pulse 1.5s infinite;
 }
-
 @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.5;transform:scale(1.3);} }
 
-.ongoing-services {
-  display: flex; flex-direction: column; gap: 8px;
-}
+.ongoing-services { display: flex; flex-direction: column; gap: 8px; }
+.service-line { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
+.service-dot { width: 5px; height: 5px; background: var(--green); border-radius: 50%; flex-shrink: 0; }
 
-.service-line {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 13px; color: var(--muted);
-}
-
-.service-dot {
-  width: 5px; height: 5px;
-  background: var(--green); border-radius: 50%; flex-shrink: 0;
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
+/* Testimonials */
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .testimonial-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 28px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  position: relative;
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  padding: 28px; transition: transform 0.2s, box-shadow 0.2s; position: relative;
 }
-
-.testimonial-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.07);
-}
-
-.testimonial-card.featured-t {
-  background: var(--ink);
-  border-color: var(--ink);
-}
-
-.testi-quote-icon {
-  font-size: 32px;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 12px;
-  font-family: Georgia, serif;
-}
-
-.testi-text {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.8;
-  font-style: italic;
-  margin-bottom: 20px;
-}
-
-.testimonial-card.featured-t .testi-text {
-  color: rgba(245,242,236,0.7);
-}
-
+.testimonial-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.07); }
+.testimonial-card.featured-t { background: var(--ink); border-color: var(--ink); }
+.testi-quote-icon { font-size: 32px; color: var(--accent); line-height: 1; margin-bottom: 12px; font-family: Georgia, serif; }
+.testi-text { font-size: 14px; color: var(--muted); line-height: 1.8; font-style: italic; margin-bottom: 20px; }
+.testimonial-card.featured-t .testi-text { color: rgba(245,242,236,0.7); }
 .testi-author {
   display: flex; align-items: center; gap: 12px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
+  padding-top: 16px; border-top: 1px solid var(--border);
 }
-
-.testimonial-card.featured-t .testi-author {
-  border-top-color: rgba(245,242,236,0.15);
-}
-
+.testimonial-card.featured-t .testi-author { border-top-color: rgba(245,242,236,0.15); }
 .testi-avatar {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  background: var(--accent);
+  width: 36px; height: 36px; border-radius: 50%; background: var(--accent);
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Syne', sans-serif;
-  font-weight: 800; font-size: 14px;
-  color: var(--ink);
-  flex-shrink: 0;
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 14px;
+  color: var(--ink); flex-shrink: 0;
 }
-
-.testi-name {
-  font-family: 'Syne', sans-serif;
-  font-size: 13px; font-weight: 700;
-  color: var(--ink); margin-bottom: 2px;
-}
-
+.testi-name { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
 .testimonial-card.featured-t .testi-name { color: #f5f2ec; }
-
-.testi-biz {
-  font-size: 11px; color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.06em;
-}
-
+.testi-biz { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
 .testimonial-card.featured-t .testi-biz { color: rgba(245,242,236,0.4); }
 
-.about-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 48px;
-}
-
-.about-text {
-  font-size: 17px; color: var(--ink); line-height: 1.8;
-  margin-bottom: 32px;
-}
-
+/* About */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.about-text { font-size: 17px; color: var(--ink); line-height: 1.8; margin-bottom: 32px; }
 .about-text em { font-style: italic; color: var(--green); }
 
-.about-stats {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
+.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.about-stat { padding: 20px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; }
+.about-stat-num { font-family: 'Syne', sans-serif; font-size: 36px; font-weight: 800; color: var(--ink); line-height: 1; margin-bottom: 4px; }
+.about-stat-lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
 
-.about-stat {
-  padding: 20px; background: var(--card);
-  border: 1px solid var(--border); border-radius: 12px;
+.yt-mention {
+  margin-top: 20px;
+  display: flex; align-items: center; gap: 14px;
+  background: var(--card); border: 1px solid var(--border);
+  border-left: 3px solid #ff0000;
+  border-radius: 0 12px 12px 0; padding: 14px 20px;
+  text-decoration: none;
+  transition: transform 0.2s;
 }
-
-.about-stat-num {
-  font-family: 'Syne', sans-serif;
-  font-size: 36px; font-weight: 800;
-  color: var(--ink); line-height: 1; margin-bottom: 4px;
+.yt-mention:hover { transform: translateX(4px); }
+.yt-icon {
+  width: 36px; height: 36px; background: #ff0000; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
-
-.about-stat-lbl {
-  font-size: 12px; color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.08em;
-}
+.yt-icon svg { width: 18px; height: 18px; fill: #fff; }
+.yt-label { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.yt-sub { font-size: 11px; color: var(--muted); }
 
 .resume-download-box {
-  margin-top: 24px;
-  background: var(--accent);
-  border-radius: 14px;
-  padding: 20px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
+  margin-top: 20px; background: var(--accent); border-radius: 14px;
+  padding: 20px 24px; display: flex; justify-content: space-between;
+  align-items: center; gap: 16px;
 }
-
-.resume-download-box .rdl {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700; font-size: 15px;
-  color: var(--ink);
-}
-
-.resume-download-box .rds {
-  font-size: 12px; color: rgba(15,14,12,0.6);
-  margin-top: 2px;
-}
-
+.resume-download-box .rdl { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: var(--ink); }
+.resume-download-box .rds { font-size: 12px; color: rgba(15,14,12,0.6); margin-top: 2px; }
 .resume-btn {
   display: inline-flex; align-items: center; gap: 8px;
-  background: var(--ink); color: #fff;
-  padding: 10px 20px; border-radius: 100px;
-  font-size: 13px; font-weight: 600;
-  text-decoration: none; white-space: nowrap;
-  transition: background 0.2s, transform 0.2s;
-  flex-shrink: 0;
+  background: var(--ink); color: #fff; padding: 10px 20px; border-radius: 100px;
+  font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap;
+  transition: background 0.2s, transform 0.2s; flex-shrink: 0;
 }
 .resume-btn:hover { background: var(--green); transform: translateY(-2px); }
 .resume-btn svg { width: 14px; height: 14px; fill: none; stroke: #fff; stroke-width: 2; }
 
+/* Timeline */
 .timeline { display: flex; flex-direction: column; gap: 0; }
-
-.tl-item {
-  padding: 24px 0 24px 28px;
-  border-left: 1.5px solid var(--border);
-  position: relative;
-}
-
+.tl-item { padding: 24px 0 24px 28px; border-left: 1.5px solid var(--border); position: relative; }
 .tl-item::before {
-  content: '';
-  position: absolute; left: -5px; top: 30px;
-  width: 9px; height: 9px;
-  background: var(--border); border-radius: 50%;
+  content: ''; position: absolute; left: -5px; top: 30px;
+  width: 9px; height: 9px; background: var(--border); border-radius: 50%;
 }
-
 .tl-item.active::before { background: var(--green); }
 .tl-item.active { border-left-color: var(--green); }
+.tl-period { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.tl-role { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.tl-company { font-size: 13px; color: var(--green); font-style: italic; margin-bottom: 10px; }
+.tl-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
 
-.tl-period {
-  font-size: 11px; color: var(--muted);
-  letter-spacing: 0.08em; text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-.tl-role {
-  font-family: 'Syne', sans-serif;
-  font-size: 17px; font-weight: 700;
-  color: var(--ink); margin-bottom: 2px;
-}
-
-.tl-company {
-  font-size: 13px; color: var(--green);
-  font-style: italic; margin-bottom: 10px;
-}
-
-.tl-desc {
-  font-size: 13px; color: var(--muted); line-height: 1.7;
-}
-
-.skills-layout {
-  display: grid; grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-}
-
-.skill-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: 16px; padding: 28px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.skill-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-}
-
+/* Skills */
+.skills-layout { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.skill-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; transition: transform 0.2s, box-shadow 0.2s; }
+.skill-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
 .skill-card-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 14px; font-weight: 700;
-  color: var(--ink); text-transform: uppercase;
-  letter-spacing: 0.05em; margin-bottom: 16px;
-  padding-bottom: 12px; border-bottom: 1px solid var(--border);
+  font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700;
+  color: var(--ink); text-transform: uppercase; letter-spacing: 0.05em;
+  margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
 }
-
 .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
-
 .skill-tag {
   background: var(--bg); border: 1px solid var(--border);
-  color: var(--ink); font-size: 12px;
-  padding: 5px 11px; border-radius: 100px;
+  color: var(--ink); font-size: 12px; padding: 5px 11px; border-radius: 100px;
   transition: background 0.2s, border-color 0.2s;
 }
-
 .skill-tag:hover { background: var(--accent); border-color: var(--accent); }
 
-.certs-row {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 20px; margin-top: 20px;
-}
-
+/* Certs */
+.certs-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
 .cert-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: 16px; padding: 24px;
-  border-top: 3px solid var(--green);
-  transition: transform 0.2s;
-  text-decoration: none;
-  display: block;
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  padding: 24px; border-top: 3px solid var(--green);
+  transition: transform 0.2s; text-decoration: none; display: block;
 }
-
 .cert-card:hover { transform: translateY(-3px); }
-
 .cert-emoji { font-size: 24px; margin-bottom: 12px; }
 .cert-name { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
 .cert-iss { font-size: 12px; color: var(--green); font-weight: 500; }
 .cert-verify { font-size: 11px; color: var(--muted); margin-top: 8px; text-decoration: underline; }
-
 .cert-card.inprogress { border-top-color: #f59e0b; }
 .cert-card.inprogress .cert-iss { color: #92400e; }
 
+/* Contact */
 .contact-big {
   background: var(--ink); border-radius: 24px;
-  padding: 80px 64px;
-  display: flex; justify-content: space-between; align-items: center;
-  gap: 40px;
+  padding: 80px 64px; display: flex; justify-content: space-between;
+  align-items: center; gap: 40px;
 }
-
 .contact-heading {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(28px, 4vw, 52px);
-  font-weight: 800; color: var(--bg);
-  line-height: 1.1; letter-spacing: -1.5px;
-  margin-bottom: 16px;
+  font-size: clamp(28px, 4vw, 52px); font-weight: 800;
+  color: var(--bg); line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 16px;
 }
-
 .contact-heading span { color: var(--accent); }
-
-.contact-sub {
-  font-size: 15px; color: rgba(245,242,236,0.5);
-  max-width: 360px; line-height: 1.7;
-}
-
-.contact-links {
-  display: flex; flex-direction: column; gap: 14px;
-  flex-shrink: 0;
-}
-
-.contact-link {
-  display: flex; align-items: center; gap: 12px;
-  text-decoration: none;
-  transition: transform 0.2s;
-}
-
+.contact-sub { font-size: 15px; color: rgba(245,242,236,0.5); max-width: 360px; line-height: 1.7; }
+.contact-links { display: flex; flex-direction: column; gap: 14px; flex-shrink: 0; }
+.contact-link { display: flex; align-items: center; gap: 12px; text-decoration: none; transition: transform 0.2s; }
 .contact-link:hover { transform: translateX(4px); }
-
 .c-icon {
-  width: 40px; height: 40px;
-  background: rgba(245,242,236,0.08);
-  border: 1px solid rgba(245,242,236,0.12);
-  border-radius: 10px;
+  width: 40px; height: 40px; background: rgba(245,242,236,0.08);
+  border: 1px solid rgba(245,242,236,0.12); border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
   font-family: 'Syne', sans-serif; font-weight: 700;
-  font-size: 10px; color: var(--accent);
-  letter-spacing: 0.05em;
-  flex-shrink: 0;
+  font-size: 10px; color: var(--accent); letter-spacing: 0.05em; flex-shrink: 0;
 }
-
 .c-text { font-size: 14px; color: rgba(245,242,236,0.8); }
 
 footer {
-  padding: 24px 48px;
-  display: flex; justify-content: space-between; align-items: center;
-  border-top: 1px solid var(--border);
-  font-size: 12px; color: var(--muted);
-  flex-wrap: wrap; gap: 8px;
+  padding: 24px 48px; display: flex; justify-content: space-between;
+  align-items: center; border-top: 1px solid var(--border);
+  font-size: 12px; color: var(--muted); flex-wrap: wrap; gap: 8px;
 }
-
-.footer-logo {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800; font-size: 15px; color: var(--ink);
-}
-
+.footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px; color: var(--ink); }
 .footer-logo span { color: var(--green); }
 
 .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s, transform 0.7s; }
 .reveal.visible { opacity: 1; transform: none; }
-
-.hero-tag { opacity: 0; animation: fadeUp 0.7s 0.2s forwards; }
-.hero-name { opacity: 0; animation: fadeUp 0.7s 0.35s forwards; }
-.hero-bottom { opacity: 0; animation: fadeUp 0.7s 0.5s forwards; }
-.hero-scroll { opacity: 0; animation: fadeUp 0.7s 1s forwards; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1 !important; transform: none !important; }
   .hero-tag, .hero-name, .hero-bottom, .hero-scroll { opacity: 1 !important; animation: none !important; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .skills-layout { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
   .testimonials-grid { grid-template-columns: 1fr 1fr; }
   .certs-row { grid-template-columns: 1fr 1fr; }
 }
@@ -790,11 +490,8 @@ footer {
   .proj-right { justify-content: flex-start; }
   .proj-ongoing { grid-template-columns: 1fr; gap: 24px; padding: 24px 20px; }
   .proj-client-name { font-size: 24px; }
-  .proj-results-grid { grid-template-columns: 1fr 1fr; }
-  .result-num { font-size: 28px; }
 
   .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
-
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .about-text { font-size: 16px; }
   .about-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -807,13 +504,11 @@ footer {
   .contact-big { flex-direction: column; align-items: flex-start; padding: 36px 24px; border-radius: 16px; gap: 32px; }
   .contact-links { width: 100%; }
   .contact-link { padding: 10px 0; border-bottom: 1px solid rgba(245,242,236,0.08); }
-
   footer { padding: 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
 }
 
 @media (max-width: 400px) {
   .hero-name { font-size: clamp(44px, 16vw, 64px); }
-  .proj-results-grid { grid-template-columns: 1fr; }
   .about-stats { grid-template-columns: 1fr; }
 }
 </style>
@@ -848,21 +543,17 @@ footer {
 <!-- HERO -->
 <div class="hero">
   <div class="hero-bg-text">SD</div>
-
   <div class="hero-tag">
     <span class="tag-dot"></span>
     Available for opportunities
   </div>
-
   <h1 class="hero-name">
     Sonu<br>
     <span class="line2">Das.</span>
   </h1>
-
   <div class="hero-bottom">
-    <!-- ✅ CHANGE 1: Hero desc updated with better keywords -->
     <p class="hero-desc">
-      Digital Marketing Professional with 2+ years of experience in SEO, Google Ads, Meta Ads, social media management, and WordPress development. I build brands online and make sure the work actually shows in numbers.
+      Digital Marketing Professional with 2+ years of experience in social media management, content creation, SEO, Google Ads, and Meta Ads. I build brands online through strategy, execution, and AI-powered content — and make sure every campaign moves real numbers.
     </p>
     <div class="hero-right">
       <div class="hero-role">Digital Marketing Professional</div>
@@ -873,13 +564,12 @@ footer {
         <a href="https://digitalimax.com" target="_blank">digitalimax.com</a><br>
         Hyderabad, India
       </div>
-      <a href="#" class="hero-resume-btn">
+      <a href="./Sonu_Das_Resume.pdf" download="Sonu_Das_Resume" class="hero-resume-btn">
         <svg viewBox="0 0 24 24"><path d="M12 15l-4-4h2.5V4h3v7H16l-4 4z"/><path d="M4 18h16v2H4v-2z"/></svg>
         Download Resume
       </a>
     </div>
   </div>
-
   <div class="hero-scroll">
     <div class="scroll-line"></div>
     <span class="scroll-label">Scroll</span>
@@ -900,90 +590,98 @@ footer {
 
   <div class="projects-wrap">
 
+    <!-- Das Fastfood — honest, no fake numbers -->
     <div class="proj-big featured reveal">
       <div class="proj-left">
         <div class="proj-number">Project 01 &middot; Social Media Marketing</div>
         <div class="proj-client-name">Das Fastfood</div>
         <div class="proj-industry">Food &amp; Beverage &middot; Hyderabad</div>
-        <div class="proj-role-tag">My role: Strategy &middot; Social Media Management &middot; Analytics &nbsp;|&nbsp; Team: Menu Design &middot; Poster Design &middot; Video Editing</div>
+        <div class="proj-role-tag">My role: Strategy &middot; Content Planning &middot; Social Media &nbsp;|&nbsp; Team: Menu Design &middot; Poster Design &middot; Video Editing</div>
         <div class="proj-tags">
           <span class="proj-tag">Social Media Strategy</span>
-          <span class="proj-tag">Local Audience Targeting</span>
-          <span class="proj-tag">Instagram &amp; Facebook</span>
-          <span class="proj-tag">Menu &amp; Poster Design</span>
           <span class="proj-tag">Content Calendar</span>
+          <span class="proj-tag">Instagram &amp; Facebook</span>
+          <span class="proj-tag">WhatsApp Stories</span>
+          <span class="proj-tag">Local Audience</span>
         </div>
         <p class="proj-challenge">
           <strong>Challenge:</strong> The brand had no online presence — posting was irregular, zero local engagement despite a good product. Main goal was to reach local customers in Hyderabad.
           <br><br>
-          Built their entire social media presence from scratch. Developed a consistent content calendar, coordinated menu designs, promotional posters, and video content with the creative team — all focused on driving local foot traffic and brand awareness.
+          Built their entire social media presence from scratch. Developed a consistent content calendar, briefed the creative team on menu designs, promotional posters, and WhatsApp story visuals — all focused on driving local foot traffic and brand awareness.
         </p>
       </div>
       <div class="proj-right">
-        <div class="proj-results-grid">
-          <div class="result-box">
-            <div class="result-num">2x</div>
-            <div class="result-label">Engagement Growth</div>
+        <div class="impact-list">
+          <div class="impact-item">
+            <span class="impact-dot"></span>
+            <span class="impact-text">Built complete social media presence from zero — Instagram &amp; Facebook fully set up and active</span>
           </div>
-          <div class="result-box">
-            <div class="result-num">+110%</div>
-            <div class="result-label">Reach Increase</div>
+          <div class="impact-item">
+            <span class="impact-dot"></span>
+            <span class="impact-text">Consistent content calendar maintained — menu creatives, promotional images &amp; WhatsApp stories delivered weekly</span>
+          </div>
+          <div class="impact-item">
+            <span class="impact-dot"></span>
+            <span class="impact-text">Local audience targeting improved organic reach and brand visibility in Hyderabad</span>
           </div>
         </div>
         <div class="proj-quote">
-          "Their content and consistent posting helped increase our engagement and brand visibility significantly."
+          "Their content and consistent posting helped increase our engagement and brand visibility significantly. We started getting more walk-in customers who found us on Instagram."
           <br><br>&mdash; Das Fastfood, Hyderabad
         </div>
       </div>
     </div>
 
+    <!-- King Brothers — honest, no fake numbers -->
     <div class="proj-big reveal">
       <div class="proj-left">
-        <div class="proj-number">Project 02 &middot; Video Editing &amp; Branding</div>
+        <div class="proj-number">Project 02 &middot; Social Media &amp; Creative Direction</div>
         <div class="proj-client-name">King Brother's Photography</div>
-        <div class="proj-industry">Photography &amp; Videography &middot; Kolkata</div>
-        <div class="proj-role-tag">My role: Account Setup &middot; Content Strategy &middot; Creative Direction &middot; Platform Management &nbsp;|&nbsp; Team: Video Editing &middot; Design</div>
+        <div class="proj-industry">Wedding Photography &amp; Videography &middot; Kolkata</div>
+        <div class="proj-role-tag">My role: Account Setup &middot; Content Strategy &middot; Creative Direction &nbsp;|&nbsp; Team: Video Editing &middot; Design</div>
         <div class="proj-tags">
           <span class="proj-tag">Account Setup</span>
           <span class="proj-tag">Content Strategy</span>
           <span class="proj-tag">Creative Direction</span>
-          <span class="proj-tag">Instagram Reels</span>
-          <span class="proj-tag">Brand Identity</span>
+          <span class="proj-tag">Wedding Reels</span>
+          <span class="proj-tag">Instagram</span>
         </div>
         <p class="proj-challenge">
-          <strong>Challenge:</strong> They had exceptional work but no structured online presence. Raw footage wasn't being used effectively — potential clients couldn't see the real quality of their services.
+          <strong>Challenge:</strong> Exceptional work but no structured online presence. Raw wedding footage wasn't being used effectively — potential clients couldn't see the real quality of their services.
           <br><br>
-          Set up and structured their social media accounts, developed a content strategy, and provided creative direction to the team on what type of videos and images to produce. The creative team executed the editing and design work.
+          Set up and structured their social media accounts, developed a content strategy, and directed the creative team on wedding highlight videos, reels, and photography posts. Built a premium portfolio presence on Instagram.
         </p>
       </div>
       <div class="proj-right">
-        <div class="proj-results-grid">
-          <div class="result-box">
-            <div class="result-num">+212%</div>
-            <div class="result-label">Profile Reach</div>
+        <div class="impact-list">
+          <div class="impact-item">
+            <span class="impact-dot"></span>
+            <span class="impact-text">Social accounts set up from scratch with a clear brand identity and content structure</span>
           </div>
-          <div class="result-box">
-            <div class="result-num">+240%</div>
-            <div class="result-label">Profile Views</div>
+          <div class="impact-item">
+            <span class="impact-dot"></span>
+            <span class="impact-text">Wedding highlight reels and Instagram posts produced consistently — premium portfolio presence established</span>
+          </div>
+          <div class="impact-item">
+            <span class="impact-dot"></span>
+            <span class="impact-text">Creative direction provided to editing team — visual style aligned with high-end wedding market</span>
           </div>
         </div>
         <div class="proj-quote">
-          "The edits were clean, creative, and matched our visual style perfectly. The videos looked truly professional."
+          "The edits were clean, creative, and matched our visual style perfectly. The videos looked truly professional. Our Instagram started looking like a premium studio portfolio."
           <br><br>&mdash; King Brother's Photography
         </div>
       </div>
     </div>
 
+    <!-- Krishna Sarthi — ongoing -->
     <div class="proj-ongoing reveal">
       <div>
-        <div class="ongoing-badge">
-          <span class="ongoing-pulse"></span>
-          Currently Active
-        </div>
+        <div class="ongoing-badge"><span class="ongoing-pulse"></span>Currently Active</div>
         <div class="proj-number" style="color:#92400e;">Project 03 &middot; Full Digital Marketing</div>
         <div class="proj-client-name">Krishna Sarthi</div>
         <div class="proj-industry">Public Service &middot; Ranchi, Jharkhand</div>
-        <div class="proj-role-tag" style="border-color: #fde68a; background: #fffbeb; color: #92400e;">My role: Google Ads &middot; Meta Ads &middot; SEO &middot; Custom HTML Website &middot; Social Media &middot; Client Management</div>
+        <div class="proj-role-tag" style="border-color:#fde68a;background:#fffbeb;color:#92400e;">My role: Google Ads &middot; Meta Ads &middot; SEO &middot; Custom HTML Website &middot; Social Media &middot; Client Management</div>
         <div class="proj-tags">
           <span class="proj-tag">Google Ads</span>
           <span class="proj-tag">Meta Ads</span>
@@ -993,8 +691,8 @@ footer {
         </div>
       </div>
       <div>
-        <p class="proj-challenge" style="color: var(--muted); font-size:14px; line-height:1.8; margin-bottom: 20px;">
-          <strong>Scope:</strong> End-to-end digital marketing for a public service brand in Jharkhand. Built a custom HTML/CSS website from scratch, running Google Ads &amp; Meta Ads campaigns, managing SEO and social media simultaneously. Recently started — results being actively tracked.
+        <p class="proj-challenge" style="color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:20px;">
+          <strong>Scope:</strong> End-to-end digital marketing for a public service brand in Jharkhand. Built a custom HTML/CSS website from scratch. Running Google Ads &amp; Meta Ads campaigns, managing SEO and social media simultaneously. Recently started — results being actively tracked.
         </p>
         <div class="ongoing-services">
           <div class="service-line"><span class="service-dot"></span>Custom HTML/CSS website — built from scratch</div>
@@ -1005,16 +703,14 @@ footer {
       </div>
     </div>
 
+    <!-- Vedha Waterproofing — ongoing, credentials pending -->
     <div class="proj-ongoing reveal">
       <div>
-        <div class="ongoing-badge">
-          <span class="ongoing-pulse"></span>
-          Currently Active
-        </div>
+        <div class="ongoing-badge"><span class="ongoing-pulse"></span>Currently Active</div>
         <div class="proj-number" style="color:#92400e;">Project 04 &middot; Full Digital Marketing</div>
         <div class="proj-client-name">Vedha Waterproofing</div>
         <div class="proj-industry">Contractor &amp; Construction &middot; Hyderabad</div>
-        <div class="proj-role-tag" style="border-color: #fde68a; background: #fffbeb; color: #92400e;">My role: WordPress Development &middot; Google Ads &middot; SEO &middot; Social Media &middot; Client Management</div>
+        <div class="proj-role-tag" style="border-color:#fde68a;background:#fffbeb;color:#92400e;">My role: WordPress Development &middot; Google Ads &middot; SEO &middot; Social Media &middot; Client Management</div>
         <div class="proj-tags">
           <span class="proj-tag">WordPress</span>
           <span class="proj-tag">Google Ads</span>
@@ -1024,8 +720,8 @@ footer {
         </div>
       </div>
       <div>
-        <p class="proj-challenge" style="color: var(--muted); font-size:14px; line-height:1.8; margin-bottom: 20px;">
-          <strong>Scope:</strong> Full-service digital engagement — WordPress website development, social media management, SEO, and Google Ads focused on local lead generation for a construction services brand. Just started, results being tracked.
+        <p class="proj-challenge" style="color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:20px;">
+          <strong>Scope:</strong> Full-service digital engagement — WordPress website development, social media management, SEO, and Google Ads focused on local lead generation for a construction services brand. Results being tracked.
         </p>
         <div class="ongoing-services">
           <div class="service-line"><span class="service-dot"></span>WordPress website design &amp; development</div>
@@ -1049,7 +745,6 @@ footer {
       <h2 class="section-title">What Clients<br><em>Say</em></h2>
     </div>
   </div>
-
   <div class="testimonials-grid">
     <div class="testimonial-card featured-t reveal">
       <div class="testi-quote-icon">"</div>
@@ -1062,7 +757,6 @@ footer {
         </div>
       </div>
     </div>
-
     <div class="testimonial-card reveal">
       <div class="testi-quote-icon">"</div>
       <p class="testi-text">The edits were clean, creative, and matched our visual style perfectly. The videos looked truly professional. Our Instagram started looking like a premium studio portfolio.</p>
@@ -1074,7 +768,6 @@ footer {
         </div>
       </div>
     </div>
-
     <div class="testimonial-card reveal">
       <div class="testi-quote-icon">"</div>
       <p class="testi-text">Sonu handles everything end-to-end — from the website to ads. We don't need to worry about digital. He understands the business quickly and gets to work.</p>
@@ -1102,9 +795,8 @@ footer {
 
   <div class="about-grid">
     <div class="about-left reveal">
-      <!-- ✅ CHANGE 2b: Softened agency founder language in about text -->
       <p class="about-text">
-        I am a Digital Marketing professional based in Hyderabad with <em>2+ years of hands-on experience</em> across SEO, paid ads, social media, and WordPress development. Through freelance consulting, I have independently managed end-to-end campaigns for 6+ clients — alongside a creative team that handles design and video editing.
+        I am a Digital Marketing professional based in Hyderabad with <em>2+ years of hands-on experience</em> across SEO, paid ads, social media, and WordPress development. Through freelance consulting, I independently manage end-to-end campaigns for 6+ clients — leading strategy, client communication, and execution while my creative team handles design and video editing.
         <br><br>
         I have worked with businesses across four cities while managing institutional digital communication at ASCI. I focus on work that actually moves numbers, not just looks busy.
       </p>
@@ -1119,20 +811,31 @@ footer {
         </div>
         <div class="about-stat">
           <div class="about-stat-num">4</div>
-          <div class="about-stat-lbl">Cities &mdash; HYD, DEL, KOL, RNC</div>
+          <div class="about-stat-lbl">Cities — HYD, DEL, KOL, RNC</div>
         </div>
         <div class="about-stat">
-          <div class="about-stat-num">+212%</div>
-          <div class="about-stat-lbl">Best Reach Result</div>
+          <div class="about-stat-num">5+</div>
+          <div class="about-stat-lbl">Platforms Managed</div>
         </div>
       </div>
+
+      <!-- YouTube Channel mention -->
+      <a href="https://www.youtube.com/@DigitalIMAX" target="_blank" class="yt-mention">
+        <div class="yt-icon">
+          <svg viewBox="0 0 24 24"><path d="M23.5 6.2s-.2-1.6-1-2.3c-.9-1-1.9-1-2.4-1C17 2.8 12 2.8 12 2.8s-5 0-8.1.1c-.5.1-1.5.1-2.4 1C.7 4.6.5 6.2.5 6.2S.3 8 .3 9.9v1.7c0 1.8.2 3.6.2 3.6s.2 1.6 1 2.3c.9 1 2.1.9 2.6 1C5.8 18.7 12 18.7 12 18.7s5 0 8.1-.2c.5-.1 1.5-.1 2.4-1 .8-.7 1-2.3 1-2.3s.2-1.8.2-3.6V9.9c0-1.9-.2-3.7-.2-3.7zM9.7 13.5V7.8l6.5 2.9-6.5 2.8z"/></svg>
+        </div>
+        <div>
+          <div class="yt-label">Digital IMAX — YouTube Channel</div>
+          <div class="yt-sub">Digital marketing insights, SEO tips &amp; strategy content &rarr;</div>
+        </div>
+      </a>
 
       <div class="resume-download-box">
         <div>
           <div class="rdl">Download My Resume</div>
           <div class="rds">PDF &middot; Digital Marketing Professional</div>
         </div>
-        <a href="#" class="resume-btn">
+        <a href="./Sonu_Das_Resume.pdf" download="Sonu_Das_Resume" class="resume-btn">
           <svg viewBox="0 0 24 24"><path d="M12 15l-4-4h2.5V4h3v7H16l-4 4z"/><path d="M4 18h16v2H4v-2z"/></svg>
           Resume PDF
         </a>
@@ -1146,29 +849,28 @@ footer {
           <div class="tl-period">June 2025 &mdash; Present</div>
           <div class="tl-role">Social Media Marketing Executive</div>
           <div class="tl-company">ASCI &ndash; Administrative Staff College of India</div>
-          <div class="tl-desc">Managing institutional digital presence across LinkedIn, Facebook, Instagram &amp; X for executive programs attended by IAS officers, IIT faculty, banking leaders, and policymakers.</div>
+          <div class="tl-desc">Managing institutional digital presence across LinkedIn, Facebook, Instagram, X &amp; YouTube for executive programs attended by IAS officers, IIT faculty, banking leaders, and policymakers. Editorial calendars, event highlights &amp; testimonial curation.</div>
         </div>
 
-        <!-- ✅ CHANGE 2a: Founder -> Freelance Digital Marketing Consultant -->
         <div class="tl-item active">
           <div class="tl-period">Dec 2024 &mdash; Present</div>
-          <div class="tl-role">Freelance Digital Marketing Consultant</div>
+          <div class="tl-role">Digital Marketing Consultant</div>
           <div class="tl-company">Digital IMAX &middot; Hyderabad</div>
-          <div class="tl-desc">End-to-end digital marketing for 6+ clients across Hyderabad, Delhi, Kolkata &amp; Ranchi. Independently managing strategy, SEO, Google Ads, Meta Ads, social media, WordPress development, and client communication. Coordinating with a creative team on design and video content.</div>
+          <div class="tl-desc">Managing 6+ client relationships end-to-end — strategy meetings, campaign planning, Google Ads, Meta Ads, SEO, WordPress &amp; social media. Creative team handles design &amp; video editing; I lead strategy, client communication &amp; problem solving.</div>
         </div>
 
         <div class="tl-item">
           <div class="tl-period">Dec 2024 &mdash; April 2025</div>
           <div class="tl-role">Digital Marketing Executive</div>
           <div class="tl-company">Rysun Jewels &middot; Kris Diamonds &middot; GGJA Education</div>
-          <div class="tl-desc">Managed digital marketing for B2B, B2C and education brands simultaneously — content strategy, SEO, GA4 monitoring, Google Business Profile, and Odoo CMS management.</div>
+          <div class="tl-desc">Managed content strategies across Facebook, Instagram, LinkedIn, Pinterest &amp; YouTube for B2B, B2C &amp; education brands. On-page SEO, GA4 monitoring, Google Business Profile &amp; Odoo CMS management.</div>
         </div>
 
         <div class="tl-item">
           <div class="tl-period">Aug 2024 &mdash; Dec 2024</div>
           <div class="tl-role">Digital Marketing Executive</div>
-          <div class="tl-company">COEPD</div>
-          <div class="tl-desc">On-page SEO, keyword research, content optimization, and campaign assistance.</div>
+          <div class="tl-company">COEPD &middot; Hyderabad</div>
+          <div class="tl-desc">Independently handled content planning, creation &amp; scheduling across social media platforms. Developed monthly content calendars, executed social media strategy, and supported on-page SEO &amp; keyword research.</div>
         </div>
 
       </div>
@@ -1198,6 +900,7 @@ footer {
         <span class="skill-tag">B2B Marketing</span>
         <span class="skill-tag">B2C Marketing</span>
         <span class="skill-tag">Performance Marketing</span>
+        <span class="skill-tag">Lead Generation</span>
       </div>
     </div>
     <div class="skill-card reveal">
@@ -1225,27 +928,40 @@ footer {
         <span class="skill-tag">Rank Math / Yoast</span>
       </div>
     </div>
+    <!-- NEW: AI & Scheduling Tools card -->
+    <div class="skill-card reveal">
+      <div class="skill-card-title">AI &amp; Scheduling Tools</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Canva</span>
+        <span class="skill-tag">ChatGPT</span>
+        <span class="skill-tag">Claude AI</span>
+        <span class="skill-tag">Gemini</span>
+        <span class="skill-tag">Hootsuite</span>
+        <span class="skill-tag">Buffer</span>
+        <span class="skill-tag">Meta Business Suite</span>
+        <span class="skill-tag">Google Keyword Planner</span>
+      </div>
+    </div>
   </div>
 
-  <!-- ✅ CHANGE 3: Expired certs replaced with Digital Medha + In Progress placeholders -->
-  <div class="certs-row" style="margin-top:24px;">
+  <div class="certs-row">
     <a href="#" target="_blank" class="cert-card reveal">
       <div class="cert-emoji">📱</div>
       <div class="cert-name">Digital Marketing Certification</div>
       <div class="cert-iss">Digital Medha &amp; Advertising</div>
       <div class="cert-verify">View Certificate &rarr;</div>
     </a>
-    <a href="https://skillshop.google.com" target="_blank" class="cert-card inprogress reveal">
+    <a href="https://skillshop.google.com" target="_blank" class="cert-card reveal">
       <div class="cert-emoji">📊</div>
-      <div class="cert-name">Google Analytics 4</div>
-      <div class="cert-iss">Google &middot; In Progress</div>
+      <div class="cert-name">Google Analytics 4 Certification</div>
+      <div class="cert-iss">Google Skillshop</div>
       <div class="cert-verify">Skillshop &rarr;</div>
     </a>
-    <a href="https://www.facebook.com/business/learn" target="_blank" class="cert-card inprogress reveal">
-      <div class="cert-emoji">📣</div>
-      <div class="cert-name">Meta Blueprint Certification</div>
-      <div class="cert-iss">Meta &middot; In Progress</div>
-      <div class="cert-verify">Meta Blueprint &rarr;</div>
+    <a href="https://www.semrush.com/academy/" target="_blank" class="cert-card reveal">
+      <div class="cert-emoji">🔍</div>
+      <div class="cert-name">SEO Certification</div>
+      <div class="cert-iss">Semrush Academy</div>
+      <div class="cert-verify">View &rarr;</div>
     </a>
   </div>
 </section>
@@ -1261,7 +977,7 @@ footer {
         <span>together.</span>
       </h2>
       <p class="contact-sub">
-        Looking for a digital marketer who can handle everything from strategy to execution? Let's talk.
+        Looking for a digital marketer who handles strategy, execution, and client communication end-to-end? Let's talk.
       </p>
     </div>
     <div class="contact-links">
@@ -1276,6 +992,10 @@ footer {
       <a href="https://linkedin.com/in/sonu-das" target="_blank" class="contact-link">
         <div class="c-icon">LIN</div>
         <div class="c-text">linkedin.com/in/sonu-das</div>
+      </a>
+      <a href="https://www.youtube.com/@DigitalIMAX" target="_blank" class="contact-link">
+        <div class="c-icon">YT</div>
+        <div class="c-text">youtube.com/@DigitalIMAX</div>
       </a>
       <a href="https://digitalimax.com" target="_blank" class="contact-link">
         <div class="c-icon">WEB</div>
@@ -1293,7 +1013,6 @@ footer {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   if (hamburger && mobileMenu) {
@@ -1302,7 +1021,6 @@ document.addEventListener('DOMContentLoaded', function() {
       mobileMenu.classList.toggle('open');
     });
   }
-
   function closeMobileMenu() {
     if (hamburger && mobileMenu) {
       hamburger.classList.remove('open');
@@ -1312,23 +1030,15 @@ document.addEventListener('DOMContentLoaded', function() {
   window.closeMobileMenu = closeMobileMenu;
 
   const reveals = document.querySelectorAll('.reveal');
-
   if (!('IntersectionObserver' in window)) {
     reveals.forEach(el => el.classList.add('visible'));
   } else {
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('visible');
-      });
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-
     reveals.forEach(el => observer.observe(el));
   }
-
-  setTimeout(() => {
-    reveals.forEach(el => el.classList.add('visible'));
-  }, 1500);
-
+  setTimeout(() => { reveals.forEach(el => el.classList.add('visible')); }, 1500);
 });
 </script>
 </body>
